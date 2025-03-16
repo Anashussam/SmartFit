@@ -40,7 +40,7 @@ namespace FitnessApp.DAL
                     Weight REAL NOT NULL CHECK(Weight > 0),
                     Height REAL NOT NULL CHECK(Height > 0),
                     Gender TEXT NOT NULL CHECK(Gender IN ('Male', 'Female')),
-                    ActivityLevel TEXT NOT NULL CHECK(ActivityLevel IN ('low', 'middle', 'High'))
+                    ActivityLevel TEXT NOT NULL CHECK(ActivityLevel IN ('Low', 'Middle', 'High'))
                 );");
 
             // جدول خطط التمارين
@@ -99,6 +99,67 @@ namespace FitnessApp.DAL
             }
         }
 
+        // دالة لإضافة بيانات لجدول اليوزر
+        public static int AddUser(string UserName, int Age, float Weight, float Height, string Gender,
+            string ActivityLevel)
+        {
+            int UserId = -1;
+            try
+            {
+                string query = @"INSERT INTO Users 
+                                       (Name, Age, Weight, Height, Gender, ActivityLevel)
+                                VALUES (@Name, @Age, @Weight, @Height, @Gender, @ActivityLevel)";
+
+            SQLiteParameter[] parameters = 
+            {
+                new SQLiteParameter("@Name", UserName),
+                new SQLiteParameter("@Age", Age),
+                new SQLiteParameter("@Weight", Weight),
+                new SQLiteParameter("@Height", Height),
+                new SQLiteParameter("@Gender", Gender),
+                new SQLiteParameter("@ActivityLevel", ActivityLevel)
+            };
+
+                UserId = ExecuteParametrizedQuery(query, parameters);
+                return UserId;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"خطأ أثناء إضافة المستخدم: {ex.Message}");
+                return -1;
+            }
+        }
+
+
+        // دالة لإضافة بيانات لجدول خطط التمارين
+        public static int AddWorkoutPlans(int UserID, string PlanName, string PlanDetails, string CreatedAt)
+        {
+            int PlanID = -1;
+            try
+            {
+                string query = @"INSERT INTO WorkoutPlans 
+                                       (UserID, PlanName, PlanDetails, CreatedAt)
+                                VALUES (@UserID, @PlanName, @PlanDetails, @CreatedAt)";
+
+                SQLiteParameter[] parameters =
+                {
+                new SQLiteParameter("@UserID", UserID),
+                new SQLiteParameter("@PlanName", PlanName),
+                new SQLiteParameter("@PlanDetails", PlanDetails),
+                new SQLiteParameter("@CreatedAt", CreatedAt),
+               
+            };
+
+                PlanID = ExecuteParametrizedQuery(query, parameters);
+                return PlanID;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"خطأ أثناء إضافة المستخدم: {ex.Message}");
+                return -1;
+            }
+        }
+
         // دالة لإضافة بيانات مع البارامترات مثال
         public static int AddExercise(Exercise exercise)
         {
@@ -135,6 +196,7 @@ namespace FitnessApp.DAL
     }
 
  
+
     public class Exercise
     {
         public int PlanID { get; set; }
