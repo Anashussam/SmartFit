@@ -1,0 +1,14 @@
+C:\Users\Anas Qadora\DataAccess\bin\Debug\net9.0-windows\Database.deps.json
+C:\Users\Anas Qadora\DataAccess\bin\Debug\net9.0-windows\Database.runtimeconfig.json
+C:\Users\Anas Qadora\DataAccess\bin\Debug\net9.0-windows\Database.dll
+C:\Users\Anas Qadora\DataAccess\bin\Debug\net9.0-windows\Database.pdb
+C:\Users\Anas Qadora\DataAccess\obj\Debug\net9.0-windows\Database.csproj.AssemblyReference.cache
+C:\Users\Anas Qadora\DataAccess\obj\Debug\net9.0-windows\Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anas Qadora\DataAccess\obj\Debug\net9.0-windows\Database.AssemblyInfoInputs.cache
+C:\Users\Anas Qadora\DataAccess\obj\Debug\net9.0-windows\Database.AssemblyInfo.cs
+C:\Users\Anas Qadora\DataAccess\obj\Debug\net9.0-windows\Database.csproj.CoreCompileInputs.cache
+C:\Users\Anas Qadora\DataAccess\obj\Debug\net9.0-windows\Database.dll
+C:\Users\Anas Qadora\DataAccess\obj\Debug\net9.0-windows\refint\Database.dll
+C:\Users\Anas Qadora\DataAccess\obj\Debug\net9.0-windows\Database.pdb
+C:\Users\Anas Qadora\DataAccess\obj\Debug\net9.0-windows\Database.genruntimeconfig.cache
+C:\Users\Anas Qadora\DataAccess\obj\Debug\net9.0-windows\ref\Database.dll

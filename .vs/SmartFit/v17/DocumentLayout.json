@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Anas Qadora\\SmartFit\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{83641A25-B0E1-4DFD-B24E-6F38724F815D}|..\\Business\\Business.csproj|c:\\users\\anas qadora\\business\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Anas Qadora\\Business\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\Business\\Class1.cs",
+              "ToolTip": "C:\\Users\\Anas Qadora\\Business\\Class1.cs",
+              "RelativeToolTip": "..\\Business\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T15:26:53.031Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

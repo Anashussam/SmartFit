@@ -1,0 +1,14 @@
+C:\Users\Anas Qadora\Business\bin\Debug\net9.0-windows\Business.deps.json
+C:\Users\Anas Qadora\Business\bin\Debug\net9.0-windows\Business.runtimeconfig.json
+C:\Users\Anas Qadora\Business\bin\Debug\net9.0-windows\Business.dll
+C:\Users\Anas Qadora\Business\bin\Debug\net9.0-windows\Business.pdb
+C:\Users\Anas Qadora\Business\obj\Debug\net9.0-windows\Business.csproj.AssemblyReference.cache
+C:\Users\Anas Qadora\Business\obj\Debug\net9.0-windows\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anas Qadora\Business\obj\Debug\net9.0-windows\Business.AssemblyInfoInputs.cache
+C:\Users\Anas Qadora\Business\obj\Debug\net9.0-windows\Business.AssemblyInfo.cs
+C:\Users\Anas Qadora\Business\obj\Debug\net9.0-windows\Business.csproj.CoreCompileInputs.cache
+C:\Users\Anas Qadora\Business\obj\Debug\net9.0-windows\Business.dll
+C:\Users\Anas Qadora\Business\obj\Debug\net9.0-windows\refint\Business.dll
+C:\Users\Anas Qadora\Business\obj\Debug\net9.0-windows\Business.pdb
+C:\Users\Anas Qadora\Business\obj\Debug\net9.0-windows\Business.genruntimeconfig.cache
+C:\Users\Anas Qadora\Business\obj\Debug\net9.0-windows\ref\Business.dll

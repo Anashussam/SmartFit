@@ -1,0 +1,83 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Anas Qadora\\SmartFit\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{45447AE1-CEE6-4061-A667-2670A6085003}|..\\DataAccess\\Database.csproj|c:\\users\\anas qadora\\dataaccess\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45447AE1-CEE6-4061-A667-2670A6085003}|..\\DataAccess\\Database.csproj|c:\\users\\anas qadora\\dataaccess\\database.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83641A25-B0E1-4DFD-B24E-6F38724F815D}|..\\Business\\Business.csproj|c:\\users\\anas qadora\\business\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40E3A4D4-CBB8-46CB-9949-3D338D1E6BA2}|SmartFit.csproj|c:\\users\\anas qadora\\smartfit\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40E3A4D4-CBB8-46CB-9949-3D338D1E6BA2}|SmartFit.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Database",
+              "DocumentMoniker": "C:\\Users\\Anas Qadora\\DataAccess\\Database.csproj",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Database.csproj",
+              "ToolTip": "C:\\Users\\Anas Qadora\\DataAccess\\Database.csproj",
+              "RelativeToolTip": "..\\DataAccess\\Database.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-16T15:47:32.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Anas Qadora\\Business\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\Business\\Class1.cs",
+              "ToolTip": "C:\\Users\\Anas Qadora\\Business\\Class1.cs",
+              "RelativeToolTip": "..\\Business\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T15:26:53.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Database.cs",
+              "DocumentMoniker": "C:\\Users\\Anas Qadora\\DataAccess\\Database.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Database.cs",
+              "ToolTip": "C:\\Users\\Anas Qadora\\DataAccess\\Database.cs",
+              "RelativeToolTip": "..\\DataAccess\\Database.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAowBIAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T15:26:38.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Anas Qadora\\SmartFit\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Anas Qadora\\SmartFit\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAkwAwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T22:55:38.153Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
