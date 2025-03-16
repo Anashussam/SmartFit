@@ -2,15 +2,39 @@
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using LiveCharts;
 
 namespace SmartFit
 {
     public partial class MainWindow : Window
     {
+        public class ChartViewModel
+        {
+            public ChartValues<double> ActivityValues { get; set; }
+            public string[] Days { get; set; }
+            public Func<double, string> YAxisLabelFormatter { get; set; }
+
+            public ChartViewModel()
+            {
+                // Activity durations in minutes
+                ActivityValues = new ChartValues<double> { 45, 75, 45, 105, 30, 100, 60 };
+                Days = new string[] { "Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri" };
+
+                // Custom formatter for y-axis labels
+                YAxisLabelFormatter = value =>
+                {
+                    return value + "m";
+                    //else if ((value % 60) == 0) return (value / 60) + "h ";
+                    //else if (value >= 60) return (short)(value / 60) + "h " + (value % 60) + "m";
+                    //else return "";
+                };
+            }
+        }
 
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new ChartViewModel();
         }
 
         // Enable window dragging by clicking on the title bar

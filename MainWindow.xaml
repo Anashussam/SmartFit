@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" 
         xmlns:local="clr-namespace:SmartFit"
         mc:Ignorable="d"
         x:Name="mainwindow"  Title="" Height="1024" Width="1440"
@@ -109,7 +109,7 @@
                     <RowDefinition Height="56*"/>
                     <RowDefinition Height="429*"/>
                 </Grid.RowDefinitions>
-                
+
                 <!-- UI elements go here -->
 
                 <StackPanel Background="#FFFFFFFF"  Margin="10,0,0,0" Grid.Row="1" HorizontalAlignment="Left" Width="339">
@@ -142,7 +142,7 @@
 
                     <!-- Navigation Items -->
                 </StackPanel>
-         
+
                 <Grid Grid.RowSpan="2" Height="118" VerticalAlignment="Top" Margin="34,0,0,0" HorizontalAlignment="Left" Width="1184" Grid.ColumnSpan="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="90*"/>
@@ -182,7 +182,7 @@
                         </Image.Effect>
                     </Image>
                 </Grid>
-              
+
                 <Grid Grid.Column="1" Height="112" VerticalAlignment="Top" HorizontalAlignment="Right" Width="213" Margin="0,10,0,0" Grid.RowSpan="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="11*"/>
@@ -213,8 +213,8 @@
 
                 </Grid>
 
-                <Border CornerRadius="50,0,0,0" Background="#FFF4F4F4" Padding="5" Margin="349,6,0,0" Grid.Row="1" Grid.ColumnSpan="2">
-                    <Grid Height="842" VerticalAlignment="Top">
+                <Border CornerRadius="32,0,0,0" Background="#FFF4F4F4" Padding="5" Margin="349,6,0,0" Grid.Row="1" Grid.ColumnSpan="2">
+                    <Grid Height="857" VerticalAlignment="Top" Margin="-5,-15,0,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="239*"/>
                             <RowDefinition Height="603*"/>
@@ -263,7 +263,7 @@
                         <Grid Margin="0,203,0,0" Grid.RowSpan="2" HorizontalAlignment="Right" Width="589">
 
                             <Grid Margin="0,0,0,303">
-                                <Border Width="544" CornerRadius="28" Background="#B8D9FF" HorizontalAlignment="Center" Margin="0,57,0,57">
+                                <Border Width="544" CornerRadius="28" Background="#B8D9FF" HorizontalAlignment="Center" Margin="0,49,0,65">
                                     <Grid>
                                         <Grid Margin="395,0,0,0">
                                             <Image Width="106" Height="160" Source="Assets\Images\Robot.png"/>
@@ -346,10 +346,56 @@
 
                         <Grid Margin="10,203,589,-9" Grid.RowSpan="2">
 
-                            <Border CornerRadius="32" Background="#FFFFFF" Margin="15,52,-7,0" Height="471" VerticalAlignment="Top">
+                            <Border CornerRadius="32" Background="#FFFFFF" Margin="10,51,0,0" Height="471" VerticalAlignment="Top">
 
-                                
-                                
+                                <Grid Margin="10">
+                                    <Border CornerRadius="10" Padding="10">
+                                        <Grid Margin="0,-25,0,0">
+                                            <!-- Chart Title -->
+                                            <TextBlock FontSize="16" FontWeight="Bold" 
+                          HorizontalAlignment="Right" Margin="0,10,0,382" Height="39" Width="142" Foreground="#FF7D8FFF" FlowDirection="RightToLeft" ><Run FlowDirection="RightToLeft" Language="ar-eg" Text="تقدمك الاسبوعي"/></TextBlock>
+
+                                            <!-- Chart -->
+                                            <lvc:CartesianChart Background="White" Margin="-11,64,-10,0">
+                                                <lvc:CartesianChart.Series>
+                                                    <!-- Main Column Series --> 
+                                                    <lvc:ColumnSeries Values="{Binding ActivityValues}" Fill="#4A7AB0" MaxColumnWidth="20" ColumnPadding="5"/>
+
+                                                    <!-- Rounded Top Circles -->
+                                                    <lvc:ScatterSeries Values="{Binding ActivityValues}"  Fill="#4A7AB0" StrokeThickness="0" ClipToBounds="True" MaxPointShapeDiameter="15" MinPointShapeDiameter="15"  />
+                                                </lvc:CartesianChart.Series>
+
+                                                <lvc:CartesianChart.AxisX>
+                                                    <lvc:Axis FontSize="16" MinValue="1" MaxValue="7" Labels="{Binding Days}">
+                                                        <lvc:Axis.Foreground>
+                                                            <SolidColorBrush Color="Black" Opacity="0.9"/>
+                                                        </lvc:Axis.Foreground>
+                                                        <lvc:Axis.Separator>
+                                                            <lvc:Separator Step="1" IsEnabled="False" />
+                                                        </lvc:Axis.Separator>
+                                                    </lvc:Axis>
+                                                </lvc:CartesianChart.AxisX>
+
+                                                <lvc:CartesianChart.AxisY>
+                                                    <lvc:Axis FontSize="16" MinValue="0" MaxValue="120" LabelFormatter="{Binding YAxisLabelFormatter}">
+                                                        <lvc:Axis.Foreground>
+                                                            <SolidColorBrush Color="Black" Opacity="0.6"/>
+                                                        </lvc:Axis.Foreground>
+                                                        <lvc:Axis.Separator>
+                                                            <lvc:Separator Step="30"  >
+                                                                <lvc:Separator.Stroke>
+                                                                    <SolidColorBrush Color="Black" Opacity="0.3" />
+                                                                </lvc:Separator.Stroke>
+                                                            </lvc:Separator>
+                                                        </lvc:Axis.Separator>
+                                                    </lvc:Axis>
+                                                </lvc:CartesianChart.AxisY>
+                                            </lvc:CartesianChart>
+
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+
                             </Border>
 
                         </Grid>
