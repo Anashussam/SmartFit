@@ -13,6 +13,7 @@ namespace Business
         public enMode Mode = enMode.AddNew;
 
         public int PlanID {  get; set; }
+        public int UserID { get; set; }
         public string PlanName { get; set; }
         public string PlanDetails { get; set; }
         public string CreatedAt {  get; set; }
@@ -20,6 +21,7 @@ namespace Business
         public clsPlan()
         {
             this.PlanID = -1;
+            this.UserID = -1;
             this.PlanName = "";
             this.PlanDetails = "";
             this.CreatedAt = DateTime.Now.ToString();
@@ -27,9 +29,10 @@ namespace Business
             Mode = enMode.AddNew;
         }
 
-        private clsPlan( int PlanID, string PlanName, string PlanDetails, string reatedAt)
+        private clsPlan( int PlanID,int UserID, string PlanName, string PlanDetails, string reatedAt)
         {
             this.PlanID = PlanID;
+            this.UserID = UserID;
             this.PlanName = PlanName;
             this.PlanDetails = PlanDetails;
             this.CreatedAt = DateTime.Now.ToString();
@@ -39,7 +42,7 @@ namespace Business
 
         private bool _AddWorkoutPlan()
         {
-            this.PlanID = DatabaseHelper.AddWorkoutPlans(this.PlanName, this.PlanDetails,this.CreatedAt);
+            this.PlanID = DatabaseHelper.AddWorkoutPlans(this.UserID,this.PlanName, this.PlanDetails,this.CreatedAt);
 
             return (this.PlanID != -1);
         }
