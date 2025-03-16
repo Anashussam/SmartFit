@@ -1,0 +1,13 @@
+  <TabControl x:Name="WindowsContainer" BorderThickness="0" Margin="5,5,5,5" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+
+      <TabControl.Resources>
+          <Style TargetType="TabItem">
+              <Setter Property="Visibility" Value="Collapsed"/>
+          </Style>
+      </TabControl.Resources>
+
+      <TabItem>
+    
+      </TabItem>
+
+  </TabControl>

@@ -35,6 +35,7 @@
     <None Remove="Assets\Images\Home.png" />
     <None Remove="Assets\Images\Logo.png" />
     <None Remove="Assets\Images\Magnifer.png" />
+    <None Remove="Assets\Images\MountainClimbersEXC.png" />
     <None Remove="Assets\Images\Notifications.png" />
     <None Remove="Assets\Images\PushupMan.png" />
     <None Remove="Assets\Images\Robot.png" />
@@ -77,6 +78,7 @@
     <Resource Include="Assets\Images\Home.png" />
     <Resource Include="Assets\Images\Logo.png" />
     <Resource Include="Assets\Images\Magnifer.png" />
+    <Resource Include="Assets\Images\MountainClimbersEXC.png" />
     <Resource Include="Assets\Images\Notifications.png" />
     <Resource Include="Assets\Images\PushupMan.png" />
     <Resource Include="Assets\Images\Robot.png" />

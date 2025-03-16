@@ -81,7 +81,7 @@ namespace SmartFit
         {
             if (e.ChangedButton == MouseButton.Left)
             {
-                //WindowsContainer.SelectedIndex = 0;
+                WindowsContainer.SelectedIndex = 0;
 
                 HomeBorder.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4A7AB0"));
                 HomeText.Foreground = Brushes.White;
@@ -106,7 +106,7 @@ namespace SmartFit
         {
             if (e.ChangedButton == MouseButton.Left)
             {
-                //WindowsContainer.SelectedIndex = 1;
+                WindowsContainer.SelectedIndex = 1;
 
                 ExcBorder.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4A7AB0"));
                 ExcText.Foreground = Brushes.White;
@@ -190,7 +190,16 @@ namespace SmartFit
 
         private void Label_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("ads");
+            WindowsContainer.SelectedIndex = 1;
+
+            ExcBorder.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4A7AB0"));
+            ExcText.Foreground = Brushes.White;
+            ExcIcon.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/Dumbbells1.png"));
+
+
+            HomeBorder.Background = Brushes.White;
+            HomeText.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4A7AB0"));
+            HomeIcon.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/Images/Home.png"));
         }
 
         private bool _isMaximized = false;
