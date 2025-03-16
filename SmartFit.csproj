@@ -9,7 +9,83 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Fonts\Poppins-Black.ttf" />
+    <None Remove="Assets\Fonts\Poppins-BlackItalic.ttf" />
+    <None Remove="Assets\Fonts\Poppins-Bold.ttf" />
+    <None Remove="Assets\Fonts\Poppins-BoldItalic.ttf" />
+    <None Remove="Assets\Fonts\Poppins-ExtraBold.ttf" />
+    <None Remove="Assets\Fonts\Poppins-ExtraBoldItalic.ttf" />
+    <None Remove="Assets\Fonts\Poppins-ExtraLight.ttf" />
+    <None Remove="Assets\Fonts\Poppins-ExtraLightItalic.ttf" />
+    <None Remove="Assets\Fonts\Poppins-Italic.ttf" />
+    <None Remove="Assets\Fonts\Poppins-Light.ttf" />
+    <None Remove="Assets\Fonts\Poppins-LightItalic.ttf" />
+    <None Remove="Assets\Fonts\Poppins-Medium.ttf" />
+    <None Remove="Assets\Fonts\Poppins-MediumItalic.ttf" />
+    <None Remove="Assets\Fonts\Poppins-Regular.ttf" />
+    <None Remove="Assets\Fonts\Poppins-SemiBold.ttf" />
+    <None Remove="Assets\Fonts\Poppins-SemiBoldItalic.ttf" />
+    <None Remove="Assets\Fonts\Poppins-Thin.ttf" />
+    <None Remove="Assets\Fonts\Poppins-ThinItalic.ttf" />
+    <None Remove="Assets\Images\AIChat.png" />
+    <None Remove="Assets\Images\Calories.png" />
+    <None Remove="Assets\Images\Dumbbells1.png" />
+    <None Remove="Assets\Images\Dumbbells3.png" />
+    <None Remove="Assets\Images\food.png" />
+    <None Remove="Assets\Images\Home.png" />
+    <None Remove="Assets\Images\Logo.png" />
+    <None Remove="Assets\Images\Magnifer.png" />
+    <None Remove="Assets\Images\Notifications.png" />
+    <None Remove="Assets\Images\PushupMan.png" />
+    <None Remove="Assets\Images\Robot.png" />
+    <None Remove="Assets\Images\StarsMinimalistic1.png" />
+    <None Remove="Assets\Images\User1.png" />
+    <None Remove="Assets\Images\Vector.png" />
+    <None Remove="Assets\Images\Water.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="System.Data.SQLite" Version="1.0.119" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Fonts\Poppins-Black.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-BlackItalic.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-Bold.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-BoldItalic.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-ExtraBold.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-ExtraBoldItalic.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-ExtraLight.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-ExtraLightItalic.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-Italic.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-Light.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-LightItalic.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-Medium.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-MediumItalic.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-Regular.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-SemiBold.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-SemiBoldItalic.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-Thin.ttf" />
+    <Resource Include="Assets\Fonts\Poppins-ThinItalic.ttf" />
+    <Resource Include="Assets\Images\AIChat.png" />
+    <Resource Include="Assets\Images\Calories.png" />
+    <Resource Include="Assets\Images\Dumbbells1.png" />
+    <Resource Include="Assets\Images\Dumbbells2.png" />
+    <Resource Include="Assets\Images\Dumbbells3.png" />
+    <Resource Include="Assets\Images\food.png" />
+    <Resource Include="Assets\Images\Home.png" />
+    <Resource Include="Assets\Images\Logo.png" />
+    <Resource Include="Assets\Images\Magnifer.png" />
+    <Resource Include="Assets\Images\Notifications.png" />
+    <Resource Include="Assets\Images\PushupMan.png" />
+    <Resource Include="Assets\Images\Robot.png" />
+    <Resource Include="Assets\Images\StarsMinimalistic1.png" />
+    <Resource Include="Assets\Images\StarsMinimalistic2.png" />
+    <Resource Include="Assets\Images\User1.png" />
+    <Resource Include="Assets\Images\User2.png" />
+    <Resource Include="Assets\Images\Vector.png" />
+    <Resource Include="Assets\Images\Water.png" />
   </ItemGroup>
 
 </Project>

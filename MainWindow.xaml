@@ -3,10 +3,363 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:local="clr-namespace:SmartFit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        x:Name="mainwindow"  Title="" Height="1024" Width="1440"
+        WindowStyle="None" AllowsTransparency="True"
+        ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen"
+        Padding="2,0,2,4" Background="Transparent" MinHeight="900" MinWidth="1275">
 
-    </Grid>
+    <!-- Main Window Border -->
+    <Border x:Name="MainBorder" Background="#FFFFFF" CornerRadius="10" BorderThickness="2" BorderBrush="LightGray">
+        <Grid>
+            <!-- Custom Rounded Title Bar -->
+            <Border x:Name="TitleBar" Background="#FFFFFFFF" CornerRadius="50,50,0,0" Height="50" VerticalAlignment="Top"
+                    MouseDown="TitleBar_MouseDown">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="51" />
+                        <ColumnDefinition Width="73" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="SmartFit" FontSize="18" FontWeight="Bold"
+                               VerticalAlignment="Center" Margin="20,0,0,0" Height="24"/>
+
+                    <!-- Minimize Button -->
+                    <Button Grid.Column="1" Content="━" FontSize="16" Click="Minimize_Click"
+                            Background="Transparent" BorderBrush="Transparent" ToolTip="Minimize" Margin="0,6,0,6" HorizontalAlignment="Center" Width="38" Cursor="Hand">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}"
+  CornerRadius="10"
+  BorderBrush="Transparent"
+  BorderThickness="0"
+  Padding="5"
+  Effect="{StaticResource DropShadowEffect}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                    <!-- Maximize/Restore Button -->
+                    <Button Grid.Column="2" Content="▢" FontSize="16" Click="MaximizeRestore_Click"
+                            Background="Transparent" BorderBrush="Transparent" ToolTip="Maximize/Restore" Margin="5,6,5,6" Cursor="Hand">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}"
+  CornerRadius="10"
+  BorderBrush="Transparent"
+  BorderThickness="0"
+  Padding="5"
+  Effect="{StaticResource DropShadowEffect}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                    <!-- Close Button -->
+                    <Button  Grid.Column="3" Content="✕" FontSize="16" Click="Close_Click"
+                            Background="Transparent" BorderBrush="Transparent" Foreground="Red" ToolTip="Close" Margin="13,6,27,6" Cursor="Hand" >
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}"
+                    CornerRadius="10"
+                    BorderBrush="Transparent"
+                    BorderThickness="0"
+                    Padding="5"
+                    Effect="{StaticResource DropShadowEffect}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+                </Grid>
+            </Border>
+
+            <!-- Main Content -->
+            <Grid Margin="0,50,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="187*"/>
+                    <ColumnDefinition Width="531*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="56*"/>
+                    <RowDefinition Height="429*"/>
+                </Grid.RowDefinitions>
+                
+                <!-- UI elements go here -->
+
+                <StackPanel Background="#FFFFFFFF"  Margin="10,0,0,0" Grid.Row="1" HorizontalAlignment="Left" Width="339">
+                    <!-- Logo -->
+                    <StackPanel Orientation="Horizontal" Margin="20,30,0,20"/>
+                    <Border x:Name="HomeBorder" Margin="0,0,0,1" CornerRadius="28" Background="#4A7AB0" Height="56" Width="296" Padding="10,16,10,16" Cursor="Hand" MouseDown="HomeBorder_MouseDown">
+                        <StackPanel Orientation="Horizontal">
+                            <Image  x:Name="HomeIcon" HorizontalAlignment="Left" Source="Assets\Images\vector.png"  Width="24" Height="24" Margin="0,0,0,0"/>
+                            <TextBlock x:Name="HomeText" Text="الرئيسية" FontSize="16" FontWeight="SemiBold" Foreground="White"  Margin="8,0,0,0" Height="29"/>
+                        </StackPanel>
+                    </Border>
+                    <Border x:Name="ExcBorder"  Margin="0,0,0,1" CornerRadius="28" Background="#FFFFFF" Height="56" Width="296" Padding="10,16,10,16" Cursor="Hand" MouseDown="ExcBorder_MouseDown">
+                        <StackPanel Orientation="Horizontal">
+                            <Image x:Name="ExcIcon" Source="Assets\Images\Dumbbells2.png" Width="24" Height="24" Margin="0,0,0,0"/>
+                            <TextBlock x:Name="ExcText" Text="تمارينك" FontSize="16" FontWeight="SemiBold" Foreground="#FF4A7AB0" Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </Border>
+                    <Border  x:Name="AiBorder" Margin="0,0,0,1" CornerRadius="28" Background="#FFFFFF" Height="56" Width="296" Padding="10,16,10,16" Cursor="Hand" MouseDown="AiBorder_MouseDown">
+                        <StackPanel Orientation="Horizontal">
+                            <Image x:Name="AiIcon" Source="Assets\Images\StarsMinimalistic2.png" Width="24" Height="24" Margin="0,0,0,0" />
+                            <TextBlock x:Name="AiText" Text="إنشاء خطة مع AI" FontSize="16" FontWeight="SemiBold" Foreground="#FF4A7AB0" Margin="8,0,0,0" FlowDirection="RightToLeft"/>
+                        </StackPanel>
+                    </Border>
+                    <Border x:Name="Userborder" Margin="0,0,0,1" CornerRadius="28" Background="#FFFFFF" Height="56" Width="296" Padding="10,16,10,16" Cursor="Hand" MouseDown="Userborder_MouseDown">
+                        <StackPanel Orientation="Horizontal">
+                            <Image x:Name="UserIcon" Source="Assets\Images\User2.png" Width="24" Height="24" Margin="0,0,0,0" />
+                            <TextBlock x:Name="UserText" Text="ملفك الشخصي" FontSize="16" FontWeight="SemiBold" Foreground="#FF4A7AB0" Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Navigation Items -->
+                </StackPanel>
+         
+                <Grid Grid.RowSpan="2" Height="118" VerticalAlignment="Top" Margin="34,0,0,0" HorizontalAlignment="Left" Width="1184" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90*"/>
+                        <ColumnDefinition Width="123*"/>
+                        <ColumnDefinition Width="651*"/>
+                        <ColumnDefinition Width="48*"/>
+                        <ColumnDefinition Width="46*"/>
+                        <ColumnDefinition Width="226*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label FontFamily="Assets\Fonts\#Poppins Black" Content="Smart Fit" FontSize="24" VerticalContentAlignment="Center" Foreground="#FF4A7AB0" Margin="10,0,604,0" Grid.Column="1" Grid.ColumnSpan="2" />
+                    <Image Source="Assets\Images\Logo.png" HorizontalAlignment="Left" Height="88" VerticalAlignment="Center" Width="86">
+                        <Image.Effect>
+
+
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+
+                    <Border Background="#FFF4F4F4" CornerRadius="15" BorderBrush="Gray" BorderThickness="0" Padding="5" Grid.Column="2" HorizontalAlignment="Right" Margin="0,33,10,38" Width="533">
+
+                        <TextBox  x:Name="SearchBox" IsReadOnly="True"  TextWrapping="Wrap" Text="ابحث عن تمرينك" VerticalAlignment="Center" Height="44" BorderThickness="0,0,0,0" VerticalContentAlignment="Center" Padding="30,0,0,0" Background="#FFF4F4F4" Cursor="IBeam" Foreground="Gray" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus"/>
+                    </Border>
+
+                    <Image Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="113,44,0,0" VerticalAlignment="Top" Width="24" Source="/Assets/Images/Magnifer.png" Stretch="Fill" Cursor="Hand">
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <Image Grid.Column="3" HorizontalAlignment="Center" Height="24" VerticalAlignment="Center" Width="24" Source="/Assets/Images/Notifications.png" Cursor="Hand">
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <Image Grid.Column="4" HorizontalAlignment="Center" Height="24" VerticalAlignment="Center" Width="24" Source="/Assets/Images/AIChat.png" Cursor="Hand">
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                </Grid>
+              
+                <Grid Grid.Column="1" Height="112" VerticalAlignment="Top" HorizontalAlignment="Right" Width="213" Margin="0,10,0,0" Grid.RowSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="11*"/>
+                        <RowDefinition Height="17*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="134*"/>
+                        <ColumnDefinition Width="50*"/>
+                    </Grid.ColumnDefinitions>
+                    <Ellipse Grid.Column="1" HorizontalAlignment="Center" Height="48" VerticalAlignment="Top" Width="48" Margin="0,22,0,0" Grid.RowSpan="2" Cursor="Hand">
+                        <Ellipse.Effect>
+                            <DropShadowEffect/>
+                        </Ellipse.Effect>
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="/Assets/Images/Logo.png"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Label Content="Ahmed muhmmed" HorizontalAlignment="Left" Margin="47,0,0,0" VerticalAlignment="Bottom" Width="108" Height="27">
+
+
+
+                    </Label>
+                    <Label Content="18 عام" HorizontalAlignment="Left" Margin="40,0,0,42" VerticalAlignment="Bottom" Width="115" Height="28" Grid.RowSpan="2" FlowDirection="RightToLeft" Foreground="#FFB2B2B2">
+
+
+
+                    </Label>
+
+                </Grid>
+
+                <Border CornerRadius="50,0,0,0" Background="#FFF4F4F4" Padding="5" Margin="349,6,0,0" Grid.Row="1" Grid.ColumnSpan="2">
+                    <Grid Height="842" VerticalAlignment="Top">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="239*"/>
+                            <RowDefinition Height="603*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Margin="10,10,0,3">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="677*"/>
+                                <ColumnDefinition Width="390*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Height="180  " CornerRadius="32" Background="#D6DCFF" Margin="0,36,18,0" VerticalAlignment="Top" Grid.Column="1">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="0*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border x:Name="btnContinueEXC" Background="#4A7AB0" Margin="28,28,0,114" CornerRadius="32" Width="152" Cursor="Hand" HorizontalAlignment="Left">
+                                        <Label Content="أكمل تمرينك الان!"  Foreground="#FFFFFF" FlowDirection="RightToLeft" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <Ellipse Margin="0,136,10,0" HorizontalAlignment="Right" Width="207">
+                                        <Ellipse.Fill>
+                                            <SolidColorBrush Color="Black" Opacity="0.03"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                    <Image Source="Assets\Images\PushupMan.png" Margin="0,47,0,7" HorizontalAlignment="Right" Width="240"/>
+                                </Grid>
+                            </Border>
+                            <Border Height="180  " CornerRadius="28" Background="#B8D9FF" Margin="8,36,17,0" VerticalAlignment="Top">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="477*"/>
+                                        <ColumnDefinition Width="175*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Source="Assets\Images\Water.png" Margin="15,30,0,30" HorizontalAlignment="Left" Width="120" Grid.Column="1"/>
+                                    <Label Content="احتياجك من الماء اليوم" FontSize="24" Margin="0,68,20,68" HorizontalAlignment="Right" Width="226" Foreground="#FF6777DC"/>
+                                    <Label Content="1.5 / 2.5 L" FontSize="24" Margin="0,105,20,30" HorizontalAlignment="Right" Width="113" Foreground="#FF6777DC"/>
+
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+
+                        <Grid Margin="0,203,0,0" Grid.RowSpan="2" HorizontalAlignment="Right" Width="589">
+
+                            <Grid Margin="0,0,0,303">
+                                <Border Width="544" CornerRadius="28" Background="#B8D9FF" HorizontalAlignment="Center" Margin="0,57,0,57">
+                                    <Grid>
+                                        <Grid Margin="395,0,0,0">
+                                            <Image Width="106" Height="160" Source="Assets\Images\Robot.png"/>
+
+                                        </Grid>
+
+                                        <Grid Margin="0,0,149,0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="37*"/>
+                                                <RowDefinition Height="108*"/>
+                                                <RowDefinition Height="77*"/>
+                                            </Grid.RowDefinitions>
+
+                                            <TextBlock Text="أهلا بك أحمد , هل أنت مستعد ليوم    حافل بالتمارين والنشاط !" Margin="54,17,0,17" Grid.Row="1" Height="74" FontSize="20" TextWrapping="Wrap" FlowDirection="RightToLeft" LineHeight="45" Foreground="#FF6777DC"/>
+
+                                            <Border x:Name="btnMakeYourPlanWithAi" Background="#4A7AB0" CornerRadius="32" Width="341" Height="53" Grid.Row="2" Cursor="Hand" Margin="54,14,0,10">
+                                                <Label Content="اصنع خطتك المثالية مع AI" Foreground="White" Width="233" Height="37" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FlowDirection="RightToLeft"></Label>
+                                            </Border>
+
+                                        </Grid>
+
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid Margin="0,263,0,0">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="270*"/>
+                                    <ColumnDefinition Width="269*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Width="264" CornerRadius="32" Background="#D6DCFF" Margin="10,36,20,0" Grid.Column="1" Height="224" VerticalAlignment="Top" >
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="121*"/>
+                                            <RowDefinition Height="103*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="قياس السعرت الحرارية في طعامك" Margin="17,22,17,25" Width="230" Height="74" FontSize="20" TextWrapping="Wrap" FlowDirection="RightToLeft" LineHeight="35" Foreground="#FF6777DC"/>
+
+                                        <Border CornerRadius="0,0,0,32" Margin="0,0,167,0" Grid.Row="1">
+                                            <Border.Background>
+                                                <ImageBrush ImageSource="/Assets/Images/food.png" Stretch="Fill"/>
+                                            </Border.Background>
+                                        </Border>
+
+                                        <Border x:Name="btnCalcCaloriesInFood" Width="230" Height="42" CornerRadius="20" Background="#4A7AB0" Margin="17,23,17,38" Grid.Row="1" Cursor="Hand">
+                                            <Label Foreground="#FFFFFFFF" Content="قياس الان" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                        </Border>
+
+                                    </Grid>
+                                </Border>
+
+                                <Border Width="264" CornerRadius="32" Background="#D6DCFF" Margin="21,36,10,0" Height="224" VerticalAlignment="Top">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="121*"/>
+                                            <RowDefinition Height="103*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="احسب كم تحتاج من السعرات الحرارية وفقا لخطتك" Margin="17,22,17,5" Width="230" FontSize="20" TextWrapping="Wrap" FlowDirection="RightToLeft" LineHeight="35" Foreground="#FF6777DC"/>
+
+                                        <Border CornerRadius="0,0,0,32" Margin="0,31,132,0" Grid.RowSpan="2">
+                                            <Border.Background>
+                                                <ImageBrush ImageSource="/Assets/Images/Calories.png" Stretch="Fill"/>
+                                            </Border.Background>
+                                        </Border>
+
+                                        <Border x:Name="btnNumberOfCaloriesBerKilo" Width="230" Height="42" CornerRadius="20" Background="#4A7AB0" Margin="17,23,17,38" Grid.Row="1" Cursor="Hand">
+                                            <Label Foreground="#FFFFFFFF" Content="احسب الان" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                        </Border>
+
+                                    </Grid>
+                                </Border>
+
+
+                            </Grid>
+
+                        </Grid>
+
+
+                        <Grid Margin="10,203,589,-9" Grid.RowSpan="2">
+
+                            <Border CornerRadius="32" Background="#FFFFFF" Margin="15,52,-7,0" Height="471" VerticalAlignment="Top">
+
+                                
+                                
+                            </Border>
+
+                        </Grid>
+
+                    </Grid>
+
+                </Border>
+
+            </Grid>
+
+        </Grid>
+    </Border>
 </Window>
